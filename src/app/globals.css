@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Premium Light Mode: Crisp White & Slate */
+    --background: 210 20% 99%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    --primary: 221 83% 53%; /* Keep signature blue but maybe slightly deeper if needed? Keeping for brand consistency */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 20% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+    --radius: 1rem; /* More rounded premium feel */
+  }
+
+  .dark {
+    /* Premium Dark Mode: Deep Void & Rich Blue */
+    --background: 224 71% 4%; /* Almost black, very deep blue-black */
+    --foreground: 210 20% 98%;
+    --card: 224 71% 6%; /* Slightly lighter than bg */
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71% 5%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 217 91% 60%; /* Vibrant but sophisticated blue */
+    --primary-foreground: 224 71% 4%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 19% 70%; /* Lighter muted text for readability */
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 28% 20%;
+    --input: 215 28% 20%;
+    --ring: 224 71% 8%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  [dir="rtl"] {
+    text-align: right;
+    direction: rtl;
+  }
+
+  [dir="ltr"] {
+    text-align: left;
+    direction: ltr;
+  }
+
+  /* Fix Lucide Icons in RTL */
+  [dir="rtl"] .lucide-arrow-right {
+    transform: rotate(180deg);
+  }
+}
